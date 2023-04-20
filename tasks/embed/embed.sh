@@ -19,13 +19,14 @@
 # BEGIN PARAMETERS TO SET
 #############################
 # location of models (e.g. /path/to/models); no trailing slash
-model_dir=""
+model_dir="${LASER}"
 
 # version number for LASER3 models
 version=1
 #############################
 # END PARAMETERS TO SET
 #############################
+echo "Model directory:: $model_dir"
 
 if [ -z ${model_dir} ]; then
     echo "Please set model directory within script"
