@@ -49,7 +49,11 @@ RUN bash ./install_external_tools.sh
 
 COPY ./decode.py $LASER/tasks/embed/decode.py
 
+# Download english models
+WORKDIR $LASER/models
+RUN $LASER/nllb/download_models.sh en
 
+RUN ls
 # Make port 80 available to the world outside this container
 WORKDIR /app
 
