@@ -51,7 +51,7 @@ COPY ./decode.py $LASER/tasks/embed/decode.py
 
 # Download english models
 WORKDIR $LASER/models
-RUN $LASER/nllb/download_models.sh en
+RUN $LASER/nllb/download_models.sh hin_Deva
 
 RUN ls
 # Make port 80 available to the world outside this container
@@ -59,7 +59,7 @@ WORKDIR /app
 
 RUN echo "Hello World" > test.txt
 
-RUN $LASER/tasks/embed/embed.sh test.txt test_embed.raw en
+RUN $LASER/tasks/embed/embed.sh test.txt test_embed.raw hin_Deva
 RUN python $LASER/tasks/embed/decode.py test_embed.raw
 
 #Open the port 80
