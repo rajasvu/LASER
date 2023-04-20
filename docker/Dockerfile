@@ -59,7 +59,7 @@ WORKDIR /app
 
 RUN echo "Hello World" > test.txt
 
-RUN $LASER/tasks/embed/embed.sh test.txt en test_embed.raw
+RUN $LASER/tasks/embed/embed.sh test.txt test_embed.raw en
 RUN python $LASER/tasks/embed/decode.py test_embed.raw
 
 #Open the port 80
